@@ -36,7 +36,7 @@ y_train = to_categorical(y_train)
 num_classes = y_train.shape[1]
 num_classes
 
-X_train, X_val, y_train, y_val = train_test_split(X_train[:1000], y_train[:1000], test_size=0.2)
+X_train, X_val, y_train, y_val = train_test_split(X_train[:100], y_train[:100], test_size=0.2)
 # gen = ImageDataGenerator()
 # train_batches = gen.flow(X_train, y_train, batch_size=64)
 # val_batches = gen.flow(X_val, y_val, batch_size=64)
@@ -115,5 +115,5 @@ submissions = pd.DataFrame({
     "ImageId": list(range(1, len(predictions) + 1)),
     "Label": predictions,
 })
-submissions.to_csv("./output/submission_05.csv", Index=False)
+submissions.to_csv("./output/submission_05.csv", index=False)
 
